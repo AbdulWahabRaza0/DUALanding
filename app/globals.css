@@ -1,0 +1,18 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+:root {
+  --primary-text-color: white;
+  --secondary-text-color: #10131a;
+  --primary-bg: white;
+  --secondary-bg: #1f212f;
+  --tirtiary-bg: #191c1e;
+}
+
+body {
+  color: var(--primary-text-color);
+  background: var(--primary-bg);
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+}
