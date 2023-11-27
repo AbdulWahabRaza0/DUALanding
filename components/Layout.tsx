@@ -88,6 +88,18 @@ const SpanWrapper = styled.span<WrapperProps>`
   padding-bottom: ${(props) => (props.pb ? props.pb : "")};
   font-family: ${(props) => (props.family ? props.family : "")};
 `;
+interface BackgroundProps {
+  height?: any;
+  url: any;
+}
+const Background = styled.div<BackgroundProps>`
+  background-image: ${(props) => (props.url ? props.url : "")};
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: ${(props) => (props.height ? props.height : "52vh")};
+`;
 const LoadingSpinner = () => {
   return (
     <>
@@ -238,4 +250,5 @@ export {
   useMediaQuery,
   LoadingSpinner,
   TimerBox,
+  Background,
 };
