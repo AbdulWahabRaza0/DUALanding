@@ -64,9 +64,9 @@ const TableRow = ({ fontSize, weight, month, tokens, index }: any) => {
   return (
     <>
       <Wrapper
-        width={isResponsive ? "350px" : "400px"}
+        width={isResponsive ? "300px" : "400px"}
         borderBottom={"1px solid white"}
-        className="flex flex-row items-center justify-between p-5"
+        className="flex flex-row items-center justify-between p-3"
       >
         <P
           className="mb-0"
@@ -95,7 +95,7 @@ const TableComp = ({ data }: any) => {
   return (
     <>
       <Wrapper
-        width={isResponsive ? "370px" : "450px"}
+        width={isResponsive ? "330px" : "450px"}
         height="auto"
         bg="linear-gradient(to bottom, #2a70fa, #671acd);"
         borderRadius={"14px"}
@@ -149,8 +149,8 @@ export default function Home() {
   const isResponsive = useMediaQuery({
     query: "(max-width: 753px)",
   });
-  const isResponsiveTable = useMediaQuery({
-    query: "(max-width: 890px)",
+  const isResponsiveTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
   });
   const isResponsiveCenter = useMediaQuery({
     query: "(max-width: 1400px)",
@@ -193,12 +193,12 @@ export default function Home() {
   return mount ? (
     <>
       <Wrapper position="relative">
-        <Background url="url(/assets/bg.png)" height={"900px"}>
+        <Background url="url(/assets/bg.png)" height={"920px"}>
           <Wrapper className="flex flex-row items-center justify-center">
-            <Wrapper width={isResponsive ? "97vw" : "82vw"} className="mt-6 ">
+            <Wrapper width={isResponsive ? "100vw" : "82vw"} className="mt-6 ">
               <Header />
               <Wrapper
-                height="70vh"
+                height={isResponsive ? "95vh" : "70vh"}
                 className="flex flex-row items-center justify-between"
               >
                 <Wrapper
@@ -209,8 +209,8 @@ export default function Home() {
                   }`}
                 >
                   <H1
-                    // data-aos="fade-right"
-                    // data-aos-duration="2000"
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
                     ls={"12px"}
                     fontSize={isResponsive ? "32px" : "56px"}
                     lHeight={isResponsive ? "31px" : "39px"}
@@ -219,8 +219,8 @@ export default function Home() {
                     RAINMAKER
                   </H1>
                   <H1
-                    // data-aos="fade-right"
-                    // data-aos-duration="2000"
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
                     ls={"12px"}
                     fontSize={isResponsive ? "32px" : "56px"}
                     lHeight={isResponsive ? "31px" : "39px"}
@@ -238,11 +238,19 @@ export default function Home() {
                   >
                     Connect your wallet with
                     <br />{" "}
-                    <SpanWrapper color={"#6AA4FF"}>
+                    <SpanWrapper
+                      color={"#6AA4FF"}
+                      data-aos="fade-left"
+                      data-aos-duration="2000"
+                    >
                       <b>$RAIN</b>
                     </SpanWrapper>{" "}
                     to swap for{" "}
-                    <SpanWrapper color="white">
+                    <SpanWrapper
+                      color="white"
+                      data-aos="fade-left"
+                      data-aos-duration="2000"
+                    >
                       <b>$DUEL</b>
                     </SpanWrapper>
                   </P>
@@ -259,8 +267,8 @@ export default function Home() {
                       </PrimaryButton>
                     ) : (
                       <PrimaryButton
-                        data-aos="flip-right"
-                        data-aos-duration="2000"
+                      // data-aos="flip-right"
+                      // data-aos-duration="2000"
                       >
                         Convert Rain
                       </PrimaryButton>
@@ -293,17 +301,19 @@ export default function Home() {
         )}
         {/* Section2  */}
         <Wrapper
-          height={isResponsive ? "1450px" : "1100px"}
+          height={isResponsive ? "1300px" : "1100px"}
           className="flex flex-row items-center justify-center"
         >
           <Wrapper
-            width={isResponsive ? "94vw" : "100vw"}
+            width={isResponsive ? "90vw" : "100vw"}
             className="flex flex-col items-center justify-center gap-7"
           >
             {isResponsive ? (
               <>
                 {" "}
                 <P
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
                   fontSize={isResponsive ? "16px" : "18px"}
                   lHeight="24px"
                   weight="700"
@@ -320,10 +330,12 @@ export default function Home() {
               <>
                 {" "}
                 <P
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
                   fontSize={isResponsive ? "17px" : "18px"}
                   lHeight="24px"
                   weight="700"
-                  className="text-center"
+                  className="text-center mb-0"
                   fontColor="#10131a"
                   ls={"4px"}
                 >
@@ -350,17 +362,25 @@ export default function Home() {
                   <Image
                     src="/assets/rain-maker.png"
                     alt="rain maker"
-                    width={600}
-                    height={600}
-                    // layout="responsive"
+                    width={isResponsive ? 400 : 650}
+                    height={isResponsive ? 400 : 650}
+                    layout="responsive"
                   />
                 </Wrapper>
               )}
-              <Wrapper color="#10131a">
+              <Wrapper
+                color="#10131a"
+                data-aos="flip-left"
+                data-aos-duration="2000"
+              >
                 <TableComp data={tableData.col} />
               </Wrapper>
               {!isResponsive && (
-                <Wrapper color="#10131a">
+                <Wrapper
+                  color="#10131a"
+                  data-aos="flip-right"
+                  data-aos-duration="2000"
+                >
                   <Image
                     src="/assets/rain-maker.png"
                     alt="rain maker"
@@ -378,7 +398,7 @@ export default function Home() {
         <Background
           style={{ position: "relative" }}
           url="url(/assets/footer-bg.png)"
-          height="300px"
+          height={isResponsive ? "400px" : "330px"}
           className="flex flex-row justify-center align-items-center"
         >
           <Wrapper position="absolute" bottom="0px" top="5%">
@@ -387,7 +407,7 @@ export default function Home() {
               width={isResponsive ? "300px" : "40vw"}
               className="flex flex-col items-center justify-content-center"
             >
-              <Wrapper width={isResponsive ? "200px" : "20vw"}>
+              <Wrapper width={isResponsive ? "250px" : "20vw"}>
                 <Image
                   src="/logo.png"
                   alt="footer"

@@ -14,5 +14,5 @@ body {
   color: var(--primary-text-color);
   background: var(--primary-bg);
   font-family: "Outfit", sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
